@@ -818,6 +818,11 @@
 
   <script type="text/javascript">
       //<![CDATA[
+      var btn = document.querySelector('.main .btn');
+      btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('height: ' + window.innerHeight + ' px');
+      })
       function rsz() {
           var footer = document['getElementById']('footer');
           var buttonWrap = document['getElementsByClassName']('btn-wrapper')[0];
