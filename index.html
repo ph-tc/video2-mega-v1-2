@@ -818,19 +818,21 @@
 
   <script type="text/javascript">
       //<![CDATA[
-      var btn = document.querySelector('.main .btn');
-      btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          alert('height: ' + window.innerHeight + ' px');
-      })
       function rsz() {
           var footer = document['getElementById']('footer');
           var buttonWrap = document['getElementsByClassName']('btn-wrapper')[0];
+          var btn = document['getElementById']('btn');
           footer['style']['bottom'] = "auto";
           footer['style']['top'] = (window['innerHeight'] - footer.offsetHeight) + 'px';
           if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
               buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-55) + 'px';
-          } else { buttonWrap['style']['marginTop'] = 0; }
+              btn.style.width = '93px';
+              btn.style.height = '93px';
+          } else {
+              buttonWrap['style']['marginTop'] = 0;
+              btn.style.width = '';
+              btn.style.height = '';
+          }
 
           document.body.style.height = window.innerHeight + 'px';
       }
